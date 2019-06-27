@@ -1,0 +1,28 @@
+// 设置宽高
+@mixin wh($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+// 设置垂直居中
+@mixin  vc() {
+    display: flex;
+    align-items: center
+}
+
+// 上下左右居中
+// horizontal 水平的
+@mixin   vhc{
+    @include vc();
+    justify-content: center
+}
+
+// 文字超出行数隐藏
+// 次方法兼容flex布局溢出的问题
+@mixin ellipsis($line_num){
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $line_num;
+    -webkit-box-orient: vertical;
+}
